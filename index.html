@@ -9,117 +9,37 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(#0f0f0f, #1f1f1f);
-      color: #f5f5f5;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(90deg, #ff416c, #ff4b2b);
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      animation: fadeInDown 1s ease;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.5rem;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      background: #1a1a1a;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-    }
-    nav a:hover {
-      color: #ff4b2b;
-    }
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
-    }
-    .stat {
-      background: #262626;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #ff4b2b55;
-      width: 200px;
-    }
-    .faq, .testimonials, .partners, .blog {
-      background: #1a1a1a;
-      margin-top: 40px;
-      border-radius: 20px;
-      padding: 40px 20px;
-    }
-    .faq-item, .testimonial, .partner {
-      margin-bottom: 20px;
-    }
-    footer {
-      background: #0d0d0d;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-    .btn {
-      background: #ff416c;
-      border: none;
-      padding: 15px 30px;
-      color: white;
-      border-radius: 50px;
-      font-size: 1rem;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background: #ff4b2b;
-    }
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(#0f0f0f, #1f1f1f); color: #f5f5f5; overflow-x: hidden; scroll-behavior: smooth; }
+    header { background: linear-gradient(90deg, #ef812a, #8D1940); padding: 80px 20px; text-align: center; position: relative; }
+    header h1 { font-size: 3rem; margin: 0; animation: fadeInDown 1s ease; }
+    header p { margin-top: 10px; font-size: 1.5rem; }
+    nav { display: flex; justify-content: space-between; padding: 20px; background: #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+    nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: 600; }
+    nav a:hover { color: #ff4b2b; }
+    .section { padding: 80px 20px; text-align: center; }
+    .section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .command, .command-category { background: #262626; padding: 20px; margin: 10px 0; border-radius: 10px; box-shadow: 0 0 10px #ff4b2b55; text-align: left; }
+    .command-category { background: none; box-shadow: none; font-size: 2rem; color: #ff4b2b; }
+    .faq, .testimonials, .partners, .blog { background: #1a1a1a; margin-top: 40px; border-radius: 20px; padding: 40px 20px; }
+    .faq-item, .testimonial, .partner { margin-bottom: 20px; }
+    footer { background: #0d0d0d; text-align: center; padding: 20px; font-size: 0.9rem; }
+    .btn { background: #ff416c; border: none; padding: 15px 30px; color: white; border-radius: 50px; font-size: 1rem; margin-top: 20px; cursor: pointer; }
+    .btn:hover { background: #ff4b2b; }
+    #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    #typed::before {
+      content: '\00a0'; /* Unicode for non-breaking space */
+      display: inline-block;
+      width: 0;
     }
   </style>
 </head>
 <body>
-
 <div id="particles-js"></div>
 
 <nav>
   <a href="#about">À propos</a>
-  <a href="#features">Fonctionnalités</a>
-  <a href="#stats">Statistiques</a>
-  <a href="#faq">FAQ</a>
+  <a href="#documentation">Documentation</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -131,26 +51,14 @@
 
 <section id="about" class="section">
   <h2>Pourquoi choisir Flammy ?</h2>
-  <p>Flammy est votre compagnon ultime sur Discord : musique de haute qualité, commandes de modération avancées, fun garanti avec de nombreux mini-jeux !</p>
-</section>
+  <p>Flammy est un bot Discord polyvalent et interactif, idéal pour animer et gérer votre serveur. Voici pourquoi le choisir :
 
-<section id="features" class="section">
-  <h2>Commandes Populaires</h2>
-  <p>🎵 Musique | 🛡️ Modération | 🎮 Jeux | 📝 Utilitaires</p>
-</section>
-
-<section id="stats" class="section">
-  <h2>Statistiques</h2>
-  <div class="stats">
-    <div class="stat">
-      <h3 id="servers">0</h3>
-      <p>Serveurs</p>
-    </div>
-    <div class="stat">
-      <h3 id="users">0</h3>
-      <p>Utilisateurs</p>
-    </div>
-  </div>
+    Fonctionnalités variées : gestion des utilisateurs, notifications d'anniversaire, mini-jeux, sondages, et bien plus.
+    Personnalisation : messages stylisés, statuts dynamiques, et commandes adaptées à vos besoins.
+    Automatisation : gestion des logs, niveaux d'XP, et rappels automatiques.
+    Convivialité : réponses humoristiques et outils pour renforcer l'engagement de la communauté.
+    Support vocal : lecture de texte ou fichiers audio dans les salons vocaux.
+    Flammy est conçu pour rendre votre serveur unique et dynamique, tout en simplifiant la gestion quotidienne.</p>
 </section>
 
 <section id="faq" class="faq">
@@ -165,59 +73,84 @@
   </div>
 </section>
 
-<section class="testimonials section">
-  <h2>Ils parlent de nous</h2>
-  <div class="testimonial">
-    <p>« Flammy a transformé mon serveur, on s’éclate tous les jours ! » - Alex</p>
-  </div>
-  <div class="testimonial">
-    <p>« La qualité musicale est insane 🔥 » - Marie</p>
-  </div>
-</section>
+<section id="documentation" class="section">
+  <h2>Documentation des Commandes</h2>
 
-<section class="partners section">
-  <h2>Nos Partenaires</h2>
-  <div class="partner">🎯 Serveur XYZ</div>
-  <div class="partner">🎯 Projet BetaTest</div>
-</section>
+  <div class="command-category">Commandes Générales :</div>
+  <div class="command"><b>/cadeau</b> — Envoie une image aléatoire en tant que cadeau en spoiler.</div>
+  <div class="command"><b>/blague</b> — Récupère une blague d'une catégorie spécifiée.</div>
+  <div class="command"><b>/niveau</b> — Affiche le niveau et l'XP d'un utilisateur.</div>
+  <div class="command"><b>/ping</b> — Affiche la latence du bot.</div>
+  <div class="command"><b>/uptime</b> — Affiche le temps depuis lequel le bot est en ligne.</div>
+  <div class="command"><b>/userinfo</b> — Affiche des informations détaillées sur un utilisateur.</div>
 
-<section class="blog section">
-  <h2>Dernières Nouveautés</h2>
-  <p>🔔 Nouvelle commande musicale + corrections de bugs - Avril 2025</p>
-  <p>🎉 Système de niveaux pour membres actif !</p>
+  <div class="command-category">Commandes Vocales :</div>
+  <div class="command"><b>/voice</b> — Fait parler le bot avec un texte donné dans un salon vocal spécifié.</div>
+  <div class="command"><b>/playaudio</b> — Fait jouer un fichier audio dans un salon vocal spécifié.</div>
+  <div class="command"><b>/raph</b> — Le bot rejoint un salon vocal et lit un fichier audio prédéfini.</div>
+  <div class="command"><b>/aide</b> — Le bot rejoint un salon vocal et lit un fichier audio prédéfini.</div>
+  <div class="command"><b>/nael_x_craig</b> — Le bot rejoint un salon vocal et lit un fichier audio prédéfini.</div>
+  <div class="command"><b>/join</b> — Le bot rejoint un salon vocal spécifié.</div>
+  <div class="command"><b>/leave</b> — Le bot quitte le salon vocal.</div>
+
+  <div class="command-category">Commandes de Gestion :</div>
+  <div class="command"><b>/kick</b> — Expulse un membre du serveur.</div>
+  <div class="command"><b>/ban</b> — Bannit un membre du serveur.</div>
+  <div class="command"><b>/addrole</b> — Ajoute un rôle à un utilisateur.</div>
+  <div class="command"><b>/removerole</b> — Retire un rôle à un utilisateur.</div>
+  <div class="command"><b>/change_nom</b> — Change le surnom d'un utilisateur.</div>
+
+  <div class="command-category">Commandes d'Anniversaire :</div>
+  <div class="command"><b>/ajouter_anniversaire</b> — Ajoute votre anniversaire.</div>
+  <div class="command"><b>/ajouter_anniversaire_admin</b> — Ajoute l'anniversaire d'un membre (administrateur uniquement).</div>
+  <div class="command"><b>/anniversaire_liste</b> — Affiche la liste des anniversaires à venir.</div>
+  <div class="command"><b>/definir_salon_anniversaire</b> — Définit le salon pour les messages d'anniversaire.</div>
+  <div class="command"><b>/bonne_anniversaire</b> — Souhaite un bon anniversaire à un membre.</div>
+  <div class="command"><b>/bonne_anniversaire_2</b> — Souhaite un bon anniversaire avec un cadeau aléatoire.</div>
+  <div class="command"><b>/show_birthday_channel</b> — Affiche le salon défini pour les messages d'anniversaire.</div>
+
+  <div class="command-category">Commandes de Sondage :</div>
+  <div class="command"><b>/sondage</b> — Crée un sondage avec une question et des choix.</div>
+  <div class="command"><b>/vote_secret</b> — Démarre un vote secret avec une question et des choix.</div>
+  <div class="command"><b>/qui_vote</b> — Affiche qui a voté dans un vote en cours.</div>
+  <div class="command"><b>/finir_vote_secret</b> — Termine un vote secret et affiche les résultats.</div>
+  <div class="command"><b>/annuler_vote_admin</b> — Annule le vote d'un utilisateur.</div>
+  <div class="command"><b>/stop_vote</b> — Arrête un vote sans afficher les résultats.</div>
+
+  <div class="command-category">Commandes de Jeu :</div>
+  <div class="command"><b>/pendu</b> — Démarre une partie de pendu avec différents niveaux de difficulté.</div>
+  <div class="command"><b>/morpion</b> — Démarre une partie de morpion (Tic-Tac-Toe) avec un adversaire.</div>
+
+  <div class="command-category">Commandes d'Embed :</div>
+  <div class="command"><b>/embed</b> — Crée un embed personnalisé.</div>
+  <div class="command"><b>/simple_embed</b> — Envoie un embed simple.</div>
+
+  <div class="command-category">Commandes Diverses :</div>
+  <div class="command"><b>/nombre_aleatoire</b> — Choisit un nombre aléatoire entre deux nombres spécifiés.</div>
+  <div class="command"><b>/serverinfo</b> — Affiche des informations détaillées sur le serveur.</div>
+  <div class="command"><b>/diffuser</b> — Envoie un message, une image ou un fichier dans plusieurs salons.</div>
+  <div class="command"><b>/envoyer</b> — Envoie un message, une image ou un fichier dans un salon spécifique.</div>
+  <div class="command"><b>/definir_salon_accueil</b> — Définit le salon d'accueil pour les nouveaux membres.</div>
+  <div class="command"><b>/definir_salon_depart</b> — Définit le salon pour les messages de départ.</div>
+  <div class="command"><b>/definir_salon_niveau</b> — Définit le salon pour les messages de passage de niveau.</div>
+  <div class="command"><b>/mp</b> — Envoie un message privé à un utilisateur.</div>
+
 </section>
 
 <section id="contact" class="section">
-  <h2>Nous Contacter</h2>
-  <form action="mailto:contact@flammybot.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Votre nom" required><br><br>
-    <input type="email" name="email" placeholder="Votre email" required><br><br>
-    <textarea name="message" placeholder="Votre message" rows="5" required></textarea><br><br>
-    <button type="submit" class="btn">Envoyer</button>
-  </form>
+  <h2>Contactez-nous</h2>
+  <p>Pour toute question ou demande, vous pouvez nous envoyer un email à <a href="mailto:pharalane.merje@gmail.com">pharalane.merje@gmail.com</a>.</p>
 </section>
 
 <footer>
-  © 2025 Flammy | Propulsé avec ❤️ | <a href="#">Mention Légales</a>
+  © 2025 Flammy | Propulsé avec ❤️ | Réalisé par Polamuss<a href="#">Mentions Légales</a>
 </footer>
 
 <script>
   particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json', function() {
     console.log('particles.js chargé');
   });
-
-  var typed = new Typed('#typed', {
-    strings: ['Bienvenue sur Flammy', 'Votre bot Discord préféré'],
-    typeSpeed: 60,
-    backSpeed: 40,
-    loop: true
-  });
-
-  let serverCount = 325; // Fake pour l'instant
-  let userCount = 7820;  // Fake pour l'instant
-  document.getElementById('servers').innerText = serverCount;
-  document.getElementById('users').innerText = userCount;
+  var typed = new Typed('#typed', { strings: ['\u00A0Bienvenue sur Flammy', '\u00A0Votre bot Discord préféré'], typeSpeed: 60, backSpeed: 40, loop: true });
 </script>
-
 </body>
 </html>
