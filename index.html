@@ -51,15 +51,14 @@
 
 <section id="about" class="section">
   <h2>Pourquoi choisir Flammy ?</h2>
-  <p>Flammy est un bot Discord polyvalent et interactif, idéal pour animer et gérer votre serveur. Voici pourquoi le choisir :
+<p>
+  Flammy est un bot Discord polyvalent et interactif, idéal pour animer et gérer votre serveur.<br><br>
+  Voici pourquoi le choisir :
+  <br><span id="typed-list"></span>
 
-    Fonctionnalités variées : gestion des utilisateurs, notifications d'anniversaire, mini-jeux, sondages, et bien plus.
-    Personnalisation : messages stylisés, statuts dynamiques, et commandes adaptées à vos besoins.
-    Automatisation : gestion des logs, niveaux d'XP, et rappels automatiques.
-    Convivialité : réponses humoristiques et outils pour renforcer l'engagement de la communauté.
-    Support vocal : lecture de texte ou fichiers audio dans les salons vocaux.
     Flammy est conçu pour rendre votre serveur unique et dynamique, tout en simplifiant la gestion quotidienne.</p>
-</section>
+</p>
+  </section>
 
 <section id="faq" class="faq">
   <h2>FAQ</h2>
@@ -143,7 +142,7 @@
 </section>
 
 <footer>
-  © 2025 Flammy | Propulsé avec ❤️ | Réalisé par Polamuss<a href="#">Mentions Légales</a>
+  © 2025 Flammy | Propulsé avec ❤️ | Réalisé par Polamuss<a href="https://polamuss.github.io/flammy-mentions-legales/"> Mentions Légales</a><a href="https://polamuss.github.io/flammy-politique-de-confidentialite"> Politique de Confidentialité</a>
 </footer>
 
 <script>
@@ -151,6 +150,21 @@
     console.log('particles.js chargé');
   });
   var typed = new Typed('#typed', { strings: ['\u00A0Bienvenue sur Flammy', '\u00A0Votre bot Discord préféré'], typeSpeed: 60, backSpeed: 40, loop: true });
+</script>
+<script>
+  var typedList = new Typed('#typed-list', {
+    strings: [
+      'Fonctionnalités variées',
+      'Personnalisation',
+      'Automatisation',
+      'Convivialité',
+      'Support vocal'
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1500,
+    loop: true
+  });
 </script>
 </body>
 </html>
