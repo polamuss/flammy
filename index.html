@@ -7,16 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-  <!-- === Script PopAds === -->
-  <script type="text/javascript" data-cfasync="false">
-  /*<![CDATA[/* */
-  (function(){var a=window,r="a6d521a0b5ed32db8bbdf36370e92785",x=[["siteId",549+334*536+5086156],["minBid",0],["popundersPerIP","0:1"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],b=["d3d3LmNkbjRhZHMuY29tL3pyZXRpbmEubWluLmNzcw==","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQveEtuaGxZL2Jhd3Mtc2RrLm1pbi5qcw=="],f=-1,v,j,g=function(){clearTimeout(j);f++;if(b[f]&&!(1793304570000<(new Date).getTime()&&1<f)){v=a.document.createElement("script");v.type="text/javascript";v.async=!0;var m=a.document.getElementsByTagName("script")[0];v.src="https://"+atob(b[f]);v.crossOrigin="anonymous";v.onerror=g;v.onload=function(){clearTimeout(j);a[r.slice(0,16)+r.slice(0,16)]||g()};j=setTimeout(g,5E3);m.parentNode.insertBefore(v,m)}};if(!a[r]){try{Object.freeze(a[r]=x)}catch(e){}g()}})();
-  /*]]>/* */
-  </script>
-
   <style>
-    /* Ton CSS existant */
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(#0f0f0f, #1f1f1f); color: #f5f5f5; overflow-x: hidden; scroll-behavior: smooth; }
     header { background: linear-gradient(90deg, #ef812a, #8D1940); padding: 80px 20px; text-align: center; position: relative; }
@@ -36,7 +27,11 @@
     .btn:hover { background: #ff4b2b; }
     #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    #typed::before { content: '\00a0'; display: inline-block; width: 0; }
+    #typed::before {
+      content: '\00a0'; /* Unicode for non-breaking space */
+      display: inline-block;
+      width: 0;
+    }
   </style>
 </head>
 <body>
@@ -56,12 +51,13 @@
 
 <section id="about" class="section">
   <h2>Pourquoi choisir Flammy ?</h2>
-  <p>
-    Flammy est un bot Discord polyvalent et interactif, idéal pour animer et gérer votre serveur.<br><br>
-    Voici pourquoi le choisir : <span id="typed-list"></span><br>
-    Flammy est conçu pour rendre votre serveur unique et dynamique, tout en simplifiant la gestion quotidienne.
-  </p>
-</section>
+<p>
+  Flammy est un bot Discord polyvalent et interactif, idéal pour animer et gérer votre serveur.<br><br>
+  Voici pourquoi le choisir : <span id="typed-list"></span><br>
+
+    Flammy est conçu pour rendre votre serveur unique et dynamique, tout en simplifiant la gestion quotidienne.</p>
+</p>
+  </section>
 
 <section id="faq" class="faq">
   <h2>FAQ</h2>
@@ -77,7 +73,66 @@
 
 <section id="documentation" class="section">
   <h2>Documentation des Commandes</h2>
-  <!-- Tes commandes ici (inchangées) -->
+
+  <div class="command-category">Commandes Générales :</div>
+  <div class="command"><b>/cadeau</b> — Envoie une image aléatoire en tant que cadeau en spoiler.</div>
+  <div class="command"><b>/blague</b> — Récupère une blague d'une catégorie spécifiée.</div>
+  <div class="command"><b>/niveau</b> — Affiche le niveau et l'XP d'un utilisateur.</div>
+  <div class="command"><b>/ping</b> — Affiche la latence du bot.</div>
+  <div class="command"><b>/uptime</b> — Affiche le temps depuis lequel le bot est en ligne.</div>
+  <div class="command"><b>/userinfo</b> — Affiche des informations détaillées sur un utilisateur.</div>
+
+  <div class="command-category">Commandes Vocales :</div>
+  <div class="command"><b>/voice</b> — Fait parler le bot avec un texte donné dans un salon vocal spécifié.</div>
+  <div class="command"><b>/playaudio</b> — Fait jouer un fichier audio dans un salon vocal spécifié.</div>
+  <div class="command"><b>/raph</b> — Le bot rejoint un salon vocal et lit un fichier audio prédéfini.</div>
+  <div class="command"><b>/aide</b> — Le bot rejoint un salon vocal et lit un fichier audio prédéfini.</div>
+  <div class="command"><b>/nael_x_craig</b> — Le bot rejoint un salon vocal et lit un fichier audio prédéfini.</div>
+  <div class="command"><b>/join</b> — Le bot rejoint un salon vocal spécifié.</div>
+  <div class="command"><b>/leave</b> — Le bot quitte le salon vocal.</div>
+
+  <div class="command-category">Commandes de Gestion :</div>
+  <div class="command"><b>/kick</b> — Expulse un membre du serveur.</div>
+  <div class="command"><b>/ban</b> — Bannit un membre du serveur.</div>
+  <div class="command"><b>/addrole</b> — Ajoute un rôle à un utilisateur.</div>
+  <div class="command"><b>/removerole</b> — Retire un rôle à un utilisateur.</div>
+  <div class="command"><b>/change_nom</b> — Change le surnom d'un utilisateur.</div>
+
+  <div class="command-category">Commandes d'Anniversaire :</div>
+  <div class="command"><b>/ajouter_anniversaire</b> — Ajoute votre anniversaire.</div>
+  <div class="command"><b>/ajouter_anniversaire_admin</b> — Ajoute l'anniversaire d'un membre (administrateur uniquement).</div>
+  <div class="command"><b>/anniversaire_liste</b> — Affiche la liste des anniversaires à venir.</div>
+  <div class="command"><b>/definir_salon_anniversaire</b> — Définit le salon pour les messages d'anniversaire.</div>
+  <div class="command"><b>/bonne_anniversaire</b> — Souhaite un bon anniversaire à un membre.</div>
+  <div class="command"><b>/bonne_anniversaire_2</b> — Souhaite un bon anniversaire avec un cadeau aléatoire.</div>
+  <div class="command"><b>/show_birthday_channel</b> — Affiche le salon défini pour les messages d'anniversaire.</div>
+
+  <div class="command-category">Commandes de Sondage :</div>
+  <div class="command"><b>/sondage</b> — Crée un sondage avec une question et des choix.</div>
+  <div class="command"><b>/vote_secret</b> — Démarre un vote secret avec une question et des choix.</div>
+  <div class="command"><b>/qui_vote</b> — Affiche qui a voté dans un vote en cours.</div>
+  <div class="command"><b>/finir_vote_secret</b> — Termine un vote secret et affiche les résultats.</div>
+  <div class="command"><b>/annuler_vote_admin</b> — Annule le vote d'un utilisateur.</div>
+  <div class="command"><b>/stop_vote</b> — Arrête un vote sans afficher les résultats.</div>
+
+  <div class="command-category">Commandes de Jeu :</div>
+  <div class="command"><b>/pendu</b> — Démarre une partie de pendu avec différents niveaux de difficulté.</div>
+  <div class="command"><b>/morpion</b> — Démarre une partie de morpion (Tic-Tac-Toe) avec un adversaire.</div>
+
+  <div class="command-category">Commandes d'Embed :</div>
+  <div class="command"><b>/embed</b> — Crée un embed personnalisé.</div>
+  <div class="command"><b>/simple_embed</b> — Envoie un embed simple.</div>
+
+  <div class="command-category">Commandes Diverses :</div>
+  <div class="command"><b>/nombre_aleatoire</b> — Choisit un nombre aléatoire entre deux nombres spécifiés.</div>
+  <div class="command"><b>/serverinfo</b> — Affiche des informations détaillées sur le serveur.</div>
+  <div class="command"><b>/diffuser</b> — Envoie un message, une image ou un fichier dans plusieurs salons.</div>
+  <div class="command"><b>/envoyer</b> — Envoie un message, une image ou un fichier dans un salon spécifique.</div>
+  <div class="command"><b>/definir_salon_accueil</b> — Définit le salon d'accueil pour les nouveaux membres.</div>
+  <div class="command"><b>/definir_salon_depart</b> — Définit le salon pour les messages de départ.</div>
+  <div class="command"><b>/definir_salon_niveau</b> — Définit le salon pour les messages de passage de niveau.</div>
+  <div class="command"><b>/mp</b> — Envoie un message privé à un utilisateur.</div>
+
 </section>
 
 <section id="contact" class="section">
@@ -86,21 +141,16 @@
 </section>
 
 <footer>
-  © 2025 Flammy | Propulsé avec ❤️ | Réalisé par Polamuss 
-  <a href="https://polamuss.github.io/flammy-mentions-legales/">Mentions Légales</a> 
-  <a href="https://polamuss.github.io/flammy-politique-de-confidentialite">Politique de Confidentialité</a>
+  © 2025 Flammy | Propulsé avec ❤️ | Réalisé par Polamuss <a href="https://polamuss.github.io/flammy-mentions-legales/">Mentions Légales</a> <a href="https://polamuss.github.io/flammy-politique-de-confidentialite">Politique de Confidentialité</a>
 </footer>
 
 <script>
   particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json', function() {
     console.log('particles.js chargé');
   });
-
-  var typed = new Typed('#typed', { 
-    strings: ['\u00A0Bienvenue sur Flammy', '\u00A0Votre bot Discord préféré'], 
-    typeSpeed: 60, backSpeed: 40, loop: true 
-  });
-
+  var typed = new Typed('#typed', { strings: ['\u00A0Bienvenue sur Flammy', '\u00A0Votre bot Discord préféré'], typeSpeed: 60, backSpeed: 40, loop: true });
+</script>
+<script>
   var typedList = new Typed('#typed-list', {
     strings: [
       'Fonctionnalités variées',
@@ -115,6 +165,5 @@
     loop: true
   });
 </script>
-
 </body>
 </html>
